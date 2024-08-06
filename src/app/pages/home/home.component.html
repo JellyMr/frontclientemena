@@ -1,0 +1,23 @@
+<div class="flex items-center flex-col pt-56 h-screen">
+  <div class="h-screen">
+    <p class="text-4xl text-center font-bold my-10">
+      Welcome to&nbsp;
+      <span class="text-5xl text-fuchsia-700">MyApp</span>
+    </p>
+
+    <div class="flex flex-col items-center gap-5 justify-center">
+      @if (authService.getUserDetail()) {
+        <h3 class="text-2xl">
+          You are logged in as <span class="font-bold rounded-md p-2 bg-purple-600 text-white">
+          {{ authService.getUserDetail()?.fullname }}
+          </span>
+        </h3>
+      } @else {
+        <p class="text-3xl">You are not logged in</p>
+        <a routerLink="/login">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Login</button>
+        </a>
+      }
+    </div>
+  </div>
+</div>
